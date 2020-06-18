@@ -15,21 +15,20 @@ resource "kubernetes_deployment" "mydeploy" {
 
 
     selector {
-      match_labels = {
-        env = "dev"
-        dc = "IN"
-        app = "webserver"
+      match_expressions {
+        key = "dc"
+        operator = "In"
+        values = ["prod" , "dev"]
         
       }
-    
+ 
     }
 
     template {
       metadata {
         labels = {
-          env = "dev"
-        dc = "IN"
-        app = "webserver"
+           dc = "prod"
+      
         }
       }
 
