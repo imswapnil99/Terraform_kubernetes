@@ -18,7 +18,7 @@ resource "kubernetes_deployment" "mydeploy" {
       match_expressions {
         key = "dc"
         operator = "In"
-        values = ["prod" , "dev"]
+        values = ["US" , "EU"]
         
       }
  
@@ -27,7 +27,7 @@ resource "kubernetes_deployment" "mydeploy" {
     template {
       metadata {
         labels = {
-           dc = "prod"
+           dc = "US"
       
         }
       }
