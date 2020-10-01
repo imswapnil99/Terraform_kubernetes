@@ -27,7 +27,7 @@ resource "kubernetes_deployment" "mydeploy" {
     template {
       metadata {
         labels = {
-           dc = "US"
+           dc = "EU"
       
         }
       }
